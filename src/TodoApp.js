@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import useTodoState from "./hooks/useTodoState";
+import useLocalStorageState from "./hooks/useLocalStorageState";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import AppBar from "@material-ui/core/AppBar";
@@ -12,8 +13,7 @@ import TodoForm from "./TodoForm";
 
 function TodoApp(props) {
 
-  const initialTodos = JSON.parse(window.localStorage.getItem("todos") || "[]");
-
+  const initialTodos = [{id:1, task:"Pet a Monkey", completed:false }];
   const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos);
 
   //useEffect
