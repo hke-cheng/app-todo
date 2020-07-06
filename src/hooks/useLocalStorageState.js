@@ -13,6 +13,7 @@ function useLocalStorageState(key, defaultVal) {
     }
     return val;
   });
+  
   //useEffect to update localstorage when state changes
   useEffect(() => {
     window.localStorage.setItem(key, JSON.stringify(state))
