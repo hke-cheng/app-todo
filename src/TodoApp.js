@@ -14,15 +14,6 @@ import { TodosProvider } from './context/todos.context';
 
 function TodoApp(props) {
 
-  const initialTodos = [{ id: 1, task: "Pet a Monkey", completed: false }];
-  const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos);
-
-  //useEffect
-  useEffect(() => {
-    window.localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-
   return (
     <Paper
       style={{
@@ -45,8 +36,8 @@ function TodoApp(props) {
         <Grid item xs={11} md={8} lg={4}>
 
           <TodosProvider>
-            <TodoForm addTodo={addTodo} />
-            <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} editTodo={editTodo} />
+            <TodoForm />
+            <TodoList/>
           </TodosProvider>
 
         </Grid>

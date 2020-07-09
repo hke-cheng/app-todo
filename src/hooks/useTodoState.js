@@ -8,6 +8,7 @@ export default initialTodos => {
 
   return {
     todos,
+    
     addTodo: newTodoText => {
       setTodos([...todos, { id: uuidv4(), task: newTodoText, completed: false }]);
     },
