@@ -9,7 +9,7 @@ import Todo from "./Todo";
 
 function TodoList(props) {
 
-  const {todos} = useContext(TodosContext);
+  const todos = useContext(TodosContext);
   
   if (todos.length)
     return (

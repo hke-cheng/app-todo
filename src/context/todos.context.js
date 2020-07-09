@@ -2,7 +2,7 @@
 //all methods to interact with todos. add, remove, edit
 
 import React, { createContext, useReducer } from "react";
-import useTodoState from "../hooks/useTodoState";
+// import useTodoState from "../hooks/useTodoState";
 import todoReducer from "../reducers/todo.reducer.js";
 
 
@@ -12,17 +12,15 @@ const defaultTodos = [
 ];
 
 export const TodosContext = createContext();
+export const DispatchContext = createContext();
 
 export function TodosProvider(props) {
-  // OLD VERSION
-  // const todoStuff = useTodoState(defaultTodos); 
 
-  const [todos, dispatch] =useReducer(todoReducer, defaultTodos);
-
-
+  const [todos, dispatch] = useReducer(todoReducer, defaultTodos);
   return (
-    <TodosContext.Provider value={{todos,dispatch}}>
-      {props.children}
+    <TodosContext.Provider value={todos}>
+      <DispatchContext.Provider value={ dispatch }>{props.children}</DispatchContext.Provider>
     </TodosContext.Provider>
+    
   )
 }

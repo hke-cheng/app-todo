@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import useTodoState from "./hooks/useTodoState";
-import useLocalStorageState from "./hooks/useLocalStorageState";
+import React from 'react';
+
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import AppBar from "@material-ui/core/AppBar";
